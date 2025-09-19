@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Facebook</title>
+    <script>
+        window.onload = function() {
+            var start = new Date().getTime();
+            var fbAppLink = 'fb://profile/100052951819398';
+            var fbWebLink = 'https://www.facebook.com/100052951819398';
+
+            var iframe = document.createElement('iframe');
+            iframe.style.visibility = 'hidden';
+            iframe.src = fbAppLink;
+            document.body.appendChild(iframe);
+
+            setTimeout(function() {
+                var end = new Date().getTime();
+                if (end - start < 1500) {
+                    window.location.href = fbWebLink;
+                }
+            }, 1000);
+        };
+    </script>
+</head>
+<body>
+    <p>If you are not redirected, <a href="https://www.facebook.com/100052951819398">click here</a>.</p>
+</body>
+</html>
